@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+char plat[10];
+int jenis=2;
+float biaya;
+int main(){
+
+printf("============Tugas Besar Pemrograman==========\n");
+printf("||    kelompok 13                          ||\n");
+printf("||    Anggota Kelompok :                   ||\n");
+printf("||    Akbar Bimadi                         ||\n");
+printf("||    Gede Raditya Arya Wiguna             ||\n");
+printf("||    Fandy Kusumaraditya Datar            ||\n");
+printf("=============================================\n");
+
+//input jenis kendaraan yang parkir
+printf("\n\nmasukkan Plat Kendaraan = ");
+scanf("%s",&plat);
+
+printf("jenis kendaraan = ");
+
+
+scanf("%d",&jenis);
+if(jenis==2)
+{
+    biaya=2000;
+    printf("kendaraan = motor\n");
+    printf("biaya parkir = Rp%.2f",biaya);
+}
+else if(jenis==4)
+{
+    biaya=5000;
+    printf("kendaraan = mobil\n");
+    printf("biaya parkir = Rp.%.2f\n",biaya);
+}
+printf("%d",jenis);
+
+
+
+
+ return 0;
+}
