@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 char plat[10];
-int jenis=2;
+int jenis;
 float biaya;
 float masuk;
-int total;
+int totalJam;
 float keluar;
 float total_biaya;
 float tambahan=1000;
@@ -40,18 +40,18 @@ else if(jenis==4)
 }
 printf("%d",jenis);
 
-printf("jam masuk =");
-scanf("%f,masuk);
+printf("\njam masuk =");
+scanf("%f",&masuk);
 
 printf("jam keluar =");
-scanf("%f,keluar);
+scanf("%f",&keluar);
 
-total = keluar-masuk;
+totalJam = keluar-masuk;
 
-printf("total jam parkir = %.2f,total");
+printf("\ntotal jam parkir = %d",totalJam);
 
-total_biaya = jenis+(total*tambahan);
-printf("total biaya parkir = Rp.%.2f,total_biaya");
+total_biaya = totalJam*tambahan+biaya;
+printf("\ntotal biaya parkir = Rp.%.2f",total_biaya);
 
 
  return 0;
