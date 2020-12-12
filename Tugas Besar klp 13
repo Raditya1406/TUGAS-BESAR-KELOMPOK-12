@@ -3,6 +3,11 @@
 char plat[10];
 int jenis=2;
 float biaya;
+float masuk;
+int total;
+float keluar;
+float total_biaya;
+float tambahan=1000;
 int main(){
 
 printf("============Tugas Besar Pemrograman==========\n");
@@ -35,7 +40,18 @@ else if(jenis==4)
 }
 printf("%d",jenis);
 
+printf("jam masuk =");
+scanf("%f,masuk);
 
+printf("jam keluar =");
+scanf("%f,keluar);
+
+total = keluar-masuk;
+
+printf("total jam parkir = %.2f,total");
+
+total_biaya = jenis+(total*tambahan);
+printf("total biaya parkir = Rp.%.2f,total_biaya");
 
 
  return 0;
