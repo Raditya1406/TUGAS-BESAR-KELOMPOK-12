@@ -1,6 +1,8 @@
+#include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
 char plat[10];
+char ulang;
 int jenis;
 float biaya;
 float masuk;
@@ -9,50 +11,47 @@ float keluar;
 float total_biaya;
 float tambahan=1000;
 int main(){
-
-printf("============Tugas Besar Pemrograman==========\n");
-printf("||    kelompok 13                          ||\n");
-printf("||    Anggota Kelompok :                   ||\n");
-printf("||    Akbar Bimadi                         ||\n");
-printf("||    Gede Raditya Arya Wiguna             ||\n");
-printf("||    Fandy Kusumaraditya Datar            ||\n");
-printf("=============================================\n");
-
-//input jenis kendaraan yang parkir
-printf("\n\nmasukkan Plat Kendaraan = ");
+    mulai:
+printf("=======================================\n");
+printf("||            TIKET PARKIR           ||\n");
+printf("=======================================\n");
+printf(" Plat Kendaraan       = ");
 scanf("%s",&plat);
-
-printf("jenis kendaraan = ");
-
-
+printf(" kode jenis kendaraan = ");
 scanf("%d",&jenis);
 if(jenis==2)
 {
     biaya=2000;
-    printf("kendaraan = motor\n");
-    printf("biaya parkir = Rp%.2f",biaya);
+printf(" kendaraan            = motor\n");
+printf(" biaya parkir         = Rp%.2f\n",biaya);
 }
 else if(jenis==4)
 {
     biaya=5000;
-    printf("kendaraan = mobil\n");
-    printf("biaya parkir = Rp.%.2f\n",biaya);
+printf(" kendaraan            = mobil\n");
+printf(" biaya parkir         = Rp.%.2f\n",biaya);}
+else {
+    printf("UNKNOWN CODE\n");
+    system("pause");
+    system("cls");
+    goto mulai;
 }
-printf("%d",jenis);
 
-printf("\njam masuk =");
+printf(" jam masuk            = ");
 scanf("%f",&masuk);
 
-printf("jam keluar =");
+printf(" jam keluar           = ");
 scanf("%f",&keluar);
 
 totalJam = keluar-masuk;
 
-printf("\ntotal jam parkir = %d",totalJam);
+printf(" total jam parkir     = %d\n",totalJam);
 
 total_biaya = totalJam*tambahan+biaya;
-printf("\ntotal biaya parkir = Rp.%.2f",total_biaya);
+printf(" total biaya parkir   = Rp.%.2f",total_biaya);
 
+printf("\n==============TERIMA KASIH=============\n");
 
- return 0;
-}
+printf("==========SILAHKAN DATANG LAGI=========\n\n");
+
+return 0;
