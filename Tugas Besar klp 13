@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 char plat[10];
+char userName[10];
+char password[8];
 char ulang;
 int jenis;
 float biaya;
@@ -11,6 +13,23 @@ float keluar;
 float total_biaya;
 float tambahan=1000;
 int main(){
+    login:
+    printf("=======PLEASE LOGIN=========\n");
+    printf("USERNAME = ");
+    scanf("%s",&userName);
+    printf("PASSWORD = ");
+    scanf("%s",&password);
+    if(strcmp(userName,"admin")==0 && strcmp(password,"123")==0){
+        printf("Akses diterima. Selamat Datang\n");
+        system("pause");}
+    else{
+        printf("LOGIN GAGAL COBA LAGI\n");
+        system ("pause");
+        system ("cls");
+        goto login;
+    }
+
+
     mulai:
 printf("=======================================\n");
 printf("||            TIKET PARKIR           ||\n");
@@ -44,14 +63,34 @@ printf(" jam keluar           = ");
 scanf("%f",&keluar);
 
 totalJam = keluar-masuk;
-
-printf(" total jam parkir     = %d\n",totalJam);
+printf(" total jam parkir     = %d jam\n",totalJam);
 
 total_biaya = totalJam*tambahan+biaya;
 printf(" total biaya parkir   = Rp.%.2f",total_biaya);
-
 printf("\n==============TERIMA KASIH=============\n");
-
 printf("==========SILAHKAN DATANG LAGI=========\n\n");
 
+
+pengulangan:
+printf("Transaksi lagi? (Y/N) = ");
+scanf("%c",&ulang);
+if(ulang=='Y'||ulang=='y'){
+    printf("memulai ulang transaksi\n");
+    system("pause");
+    system("cls");
+    goto mulai;
+}
+else if (ulang=='N'||ulang=='n'){
+    printf("kembali ke menu login\n");
+    system ("pause");
+    system ("cls");
+    goto login;
+}
+else{
+    printf("\nERROR CODE\n");
+    goto pengulangan;
+}
 return 0;
+    }
+
+
